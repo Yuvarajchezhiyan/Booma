@@ -31,13 +31,6 @@ ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 120
 
 
-from fastapi import FastAPI
-
-app = FastAPI()
-
-@app.get("/")
-def home():
-    return {"message": "Hello"}
 
 def hash_password(p: str) -> str:
     return pwd_context.hash(p.strip()[:72])
